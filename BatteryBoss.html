@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BatteryBoss</title>
+    <link rel="stylesheet" href="section.css">
+</head>
+
+<body>
+    <video autoplay loop  id="background-video">
+        <source src="battry.mp4" type="video/mp4">
+    </video>
+    <header class="heading">
+        <nav class="nav">
+            <div class="home">
+                <a href="index.html">&#x2302;</a>
+            </div>
+            <div class="nav-left">
+                BatteryBoss
+            </div>
+
+
+            <div class="nav-center">
+                <img class="logo" src="logo.png" alt="company logo">
+            </div>
+
+            <div class="nav-right">
+                <div class="search-container" id="searchContainer">
+                    <button class="search-button" id="searchButton">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                        </svg>
+                    </button>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search your model...">
+                </div>
+                 <button class="cart">
+                    <a href="cart.html" class="cart-icon">&#128722;</a>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+
+            <div class="icon">choose your category</div>
+            <button class="icon" onclick="filterPhones('all')">All</button>
+            <button class="icon" onclick="filterPhones('10k')">10k</button>
+            <button class="icon" onclick="filterPhones('20k')">20k</button>
+            <button class="icon" onclick="filterPhones('30k')">30k</button>
+            <button class="icon" onclick="filterPhones('40k')">40k</button>
+            <button class="icon" onclick="filterPhones('50k')">50k</button>
+            <button class="icon" onclick="filterPhones('50k+')">50k+</button>
+        </div>
+
+
+    </div>
+    <main class="main">
+        <section class="phone10k">
+                <div class="mobile-card">
+                <img src="https://imgs.search.brave.com/DTy0iZeO8nCga_P14yvs_9uiBFZS6qEoMMVoOrhq4IE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/OTEtaW1nLmNvbS9n/YWxsZXJ5X2ltYWdl/c191cGxvYWRzLzkv/ZS85ZTFkYzM5Nzk3/MjBkODAyOTE5MTAy/ZTk4NjIwZDUxNmYx/OGE4ZmMzLmpwZz90/cg"
+                    alt="Tecno Spark Go" />
+                <h3 class="mobile-title">Tecno Spark Go</h3>
+                <div class="mobile-price-row">
+                    <span class="mobile-mrp">₹7,999</span>
+                    <span class="mobile-price">₹6,499</span>
+                </div>
+                <button class="info">
+                    <a target="_blank" href="https://www.tecno-mobile.in/phones/product-detail/spark-go">More info
+                        &nearr;</a>
+                </button>
+            </div>
+            <div class="mobile-card">
+                <img src="https://imgs.search.brave.com/4k6vDmQivEda0oHGDeosN2-88itGTAt1oAkZPeaY7uk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z2l6bW9jaGluYS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjUvMDcvSW5maW5p/eC1Ib3QtNjBpLTUw/MHg1MDAuanBnP3g3/MDQ2MQ"
+                    alt="Infinix Hot 60i 5G" />
+                <h3 class="mobile-title">Infinix Hot 60i 5G</h3>
+                <div class="mobile-price-row">
+                    <span class="mobile-mrp">₹11,999</span>
+                    <span class="mobile-price">₹9,299</span>
+                </div>
+                <button class="info">
+                    <a target="_blank" href="https://infinixmobiles.in/pages/hot-60i-5g">More info &nearr;</a>
+                </button>
+            </div>
+        
+            <div class="mobile-card">
+                <img src="https://imgs.search.brave.com/XdwX6NIoPOpWMhVWF78kVRKfiNNwxWaJn75zR2jQ18I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmJs/b2dzLmVzL2FiOGZl/Yi80MXd0dXV2a245/bC5fc2w1MDBfL29y/aWdpbmFsLmpwZWc"
+                    alt="POCO M7" />
+                <h3 class="mobile-title">POCO M7</h3>
+                <div class="mobile-price-row">
+                    <span class="mobile-mrp">₹10,999</span>
+                    <span class="mobile-price">₹9,499</span>
+                </div>
+                <button class="info">
+                    <a target="_blank" href="https://www.poco.in/phone-poco-m7">More info &nearr;</a>
+                </button>
+            </div>
+
+        </section>
+        <section class="phone20k">
+            <div class="mobile-card">
+                <img src="https://imgs.search.brave.com/dhgBcCoDj_tLqUlrZALAFi4KOVisQLlOaQk_u1Nz4N8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnpz/dC5jb20uYnIvdGh1/bWJzLzQ1LzE1LzM2/Ly0xNDQ4NjQwMTgw/LmpwZw"
+                    alt="Moto G86 Power" />
+                <h3 class="mobile-title">Moto G86 Power</h3>
+                <div class="mobile-price-row">
+                    <span class="mobile-mrp">₹19,999</span>
+                    <span class="mobile-price">₹17,999</span>
+                </div>
+                <button class="info">
+                    <a target="_blank" href="https://www.motorola.in/moto-g86-power">More info &nearr;</a>
+                </button>
+            </div>
+            <div class="mobile-card">
+                <img src="https://imgs.search.brave.com/wyx7QsIEcaKnMrj8cs3a3iRYcebzsI1zfRi4s7Q02iA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9mZG4u/Z3NtYXJlbmEuY29t/L2ltZ3Jvb3QvbmV3/cy8yNS8wNy9pcW9v/LXoxMHItb2ZmaWNp/YWwvaW5saW5lLy14/MzYyL2dzbWFyZW5h/XzAwMi5qcGc"
+                    alt="iQOO Z10R" />
+                <h3 class="mobile-title">iQOO Z10R</h3>
+                <div class="mobile-price-row">
+                    <span class="mobile-mrp">₹21,999</span>
+                    <span class="mobile-price">₹19,499</span>
+                </div>
+                <button class="info">
+                    <a target="_blank" href="https://www.iqoo.com/in/products/z10r-5g">More info &nearr;</a>
+                </button>
+            </div>
+            <div class="mobile-card">
+                <img src="https://imgs.search.brave.com/qwxivRTrjEAIhIYTz166-o14J_AOzisEtrjyteFDoYA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuZ2FkZ2V0YW5k/Z2Vhci5jb20vdXBs/b2FkL21lZGlhL2lu/ZmluaXgtZ3QtMzAt/cHJvMTUzLmpwZWc"
+                    alt="Infinix GT 30" />
+                <h3 class="mobile-title">Infinix GT 30</h3>
+                <div class="mobile-price-row">
+                    <span class="mobile-mrp">₹24,999</span>
+                    <span class="mobile-price">₹21,999</span>
+                </div>
+                <button class="info">
+                    <a target="_blank" href="https://www.infinixmobility.com/gt-30">More info &nearr;</a>
+                </button>
+            </div>
+            
+        </section>
+        <section class="phone30k">
+            <div class="mobile-card">
+                <img src="https://m.media-amazon.com/images/I/71kUxYoGltL._SX679_.jpg" alt="infinix gt 30pro" />
+                <h3 class="mobile-title">Infinix GT 30 Pro</h3>
+                <div class="mobile-price-row">
+                    <span class="mobile-mrp">₹31,000</span>
+                    <span class="mobile-price">₹25,000</span>
+                </div>
+                <button class="info">
+                    <a target="_blank" href="https://www.infinixmobility.com/gt-30-pro">More info &nearr;</a>
+                </button>
+            </div>
+            <div class="mobile-card">
+                <img src="https://m.media-amazon.com/images/I/41dsSkED6WL._SX300_SY300_QL70_FMwebp_.jpg"
+                    alt="infinix gt 20pro" />
+                <h3 class="mobile-title">Infinix GT 20 Pro</h3>
+                <div class="mobile-price-row">
+                    <span class="mobile-mrp">₹31,000</span>
+                    <span class="mobile-price">₹25,000</span>
+                </div>
+                <button class="info">
+                    <a target="_blank" href="https://www.infinixmobility.com/gt-20-pro">More info &nearr;</a>
+                </button>
+            </div>
+            <div class="mobile-card">
+                <img src="https://m.media-amazon.com/images/I/41dsSkED6WL._SX300_SY300_QL70_FMwebp_.jpg"
+                    alt="iQOOneo10r" />
+                <h3 class="mobile-title">iQOO Neo 10r</h3>
+                <div class="mobile-price-row">
+                    <span class="mobile-mrp">₹31,000</span>
+                    <span class="mobile-price">₹25,000</span>
+                </div>
+                <button class="info">
+                    <a target="_blank" href="https://www.iqoo.com/in/products/neo10r">More info &nearr;</a>
+                </button>
+            </div>
+
+        </section>
+        <section class="phone40k">
+            <div class="mobile-card">
+                <img src="https://m.media-amazon.com/images/I/41XfwBsC7wL._SX300_SY300_QL70_FMwebp_.jpg"
+                    alt="iQOOneo10" />
+                <h3 class="mobile-title">iQOO Neo 10</h3>
+                <div class="mobile-price-row">
+                    <span class="mobile-mrp">₹38,000</span>
+                    <span class="mobile-price">₹34,000</span>
+                </div>
+                <button class="info">
+                    <a target="_blank" href="https://www.iqoo.com/in/products/neo10">More info &nearr;</a>
+                </button>
+            </div>
+
+        </section>
+        <section class="phone50k"></section>
+        <section class="phone50k+">
+        </section>
+
+    </main>
+    <footer></footer>
+    </div>
+    <script src="section.js"></script>
+</body>
+
+</html>

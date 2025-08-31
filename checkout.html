@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Mobile Checkout</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+        .cart-item { display: flex; justify-content: space-between; padding: 15px; border: 1px solid #ddd; margin: 10px 0; border-radius: 5px; }
+        .btn { background: #28a745; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px; margin: 10px 0; }
+        .qty { width: 60px; text-align: center; padding: 5px; }
+        .total { background: #e8f5e8; padding: 20px; margin: 20px 0; border-radius: 5px; font-size: 1.3em; font-weight: bold; text-align: center; }
+        input { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        .success { background: #d4edda; color: #155724; padding: 20px; border-radius: 5px; margin: 20px 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🛒 Mobile Shop Checkout</h2>
+        
+        <div id="cartSection">
+            <div class="cart-item">
+                <div>
+                    <strong>Infinix Hot 60i 5G</strong><br>
+                    <small>₹9,299 each</small>
+                </div>
+                <div>
+                    Qty: <input type="number" class="qty" value="3" min="1" data-price="9299">
+                    <div><strong>₹<span class="item-total">27,897</span></strong></div>
+                </div>
+            </div>
+            
+            <div class="cart-item">
+                <div>
+                    <strong>Infinix GT 30</strong><br>
+                    <small>₹21,999 each</small>
+                </div>
+                <div>
+                    Qty: <input type="number" class="qty" value="1" min="1" data-price="21999">
+                    <div><strong>₹<span class="item-total">21,999</span></strong></div>
+                </div>
+            </div>
+            
+            <div class="cart-item">
+                <div>
+                    <strong>iQOO Neo 10r</strong><br>
+                    <small>₹25,000 each</small>
+                </div>
+                <div>
+                    Qty: <input type="number" class="qty" value="1" min="1" data-price="25000">
+                    <div><strong>₹<span class="item-total">25,000</span></strong></div>
+                </div>
+            </div>
+            
+            <div class="total">
+                Total: ₹<span id="grandTotal">74,896</span>
+            </div>
+            
+            <div style="border-top: 2px solid #007bff; padding-top: 20px; margin-top: 20px;">
+                <h3>Customer Information</h3>
+                <input type="text" id="customerName" placeholder="Full Name" required>
+                <input type="email" id="customerEmail" placeholder="Email Address" required>
+                <input type="tel" id="customerPhone" placeholder="Phone Number" required>
+                
+                <button class="btn" onclick="placeOrder()">Place Order</button>
+            </div>
+        </div>
+        
+        <div id="successSection" style="display: none;">
+            <div class="success">
+                <h2>✅ Order Placed Successfully!</h2>
+                <h3>Order ID: <span id="orderId"></span></h3>
+                <p>Thank you for your purchase!</p>
+                <button class="btn" onclick="location.reload()">Place Another Order</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateTotals() {
+            let grandTotal = 0;
+            $('.qty').each(function() {
+                const qty = parseInt($(this).val());
+                const price = parseInt($(this).data('price'));
+                const itemTotal = qty * price;
+                
+                $(this).siblings('div').find('.item-total').text(itemTotal.toLocaleString());
+                grandTotal += itemTotal;
+            });
+            $('#grandTotal').text(grandTotal.toLocaleString());
+        }
+        
+        function placeOrder() {
+            const name = $('#customerName').val().trim();
+            const email = $('#customerEmail').val().trim();
+            const phone = $('#customerPhone').val().trim();
+            
+            if (!name || !email || !phone) {
+                alert('Please fill all customer information fields.');
+                return;
+            }
+            
+            const orderId = 'MOB' + Date.now();
+            $('#orderId').text(orderId);
+            $('#cartSection').hide();
+            $('#successSection').show();
+        }
+        
+        $(document).ready(function() {
+            $('.qty').on('input', updateTotals);
+            updateTotals();
+        });
+    </script>
+</body>
+</html>

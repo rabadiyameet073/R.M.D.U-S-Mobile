@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<address_book>
+  <contact id="001">
+    <first_name>Meet</first_name>
+    <last_name>Patel</last_name>
+    <email>meet.patel@email.com</email>
+    <phones>
+      <phone type="mobile">+91 98765 43210</phone>
+      <phone type="work">+91 79 2345 6789</phone>
+    </phones>
+  </contact>
+
+  <contact id="002">
+    <first_name>R</first_name>
+    <last_name>Sharma</last_name>
+    <email>rohit.s@email.com</email>
+    <phones>
+      <phone type="mobile">+91 87654 32109</phone>
+    </phones>
+  </contact>
+</address_book>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #111; 
+      color: #fff; 
+      padding: 20px; 
+    }
+    table { 
+      border-collapse: collapse; 
+      width: 100%; 
+      margin-top: 20px; 
+    }
+    th, td { 
+      border: 1px solid #fff; 
+      padding: 10px; 
+      text-align: left; 
+    }
+    th { 
+      background: #ff4e50; 
+    }
+  </style>
+</head>
+<body>
+  <h2>Contact Us</h2>
+  <div id="contact-data"></div>
+
+  <script>
+    // Fetch and display XML data
+    fetch("contact_us.xml")
+      .then(res => res.text())
+      .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+      .then(xml => {
+        let contacts = xml.getElementsByTagName("contact");
+        let html = "<table><tr><th>Name</th><th>Email</th><th>Phones</th></tr>";
+
+        for (let i = 0; i < contacts.length; i++) {
+          let first = contacts[i].getElementsByTagName("first_name")[0].textContent;
+          let last = contacts[i].getElementsByTagName("last_name")[0].textContent;
+          let email = contacts[i].getElementsByTagName("email")[0].textContent;
+          let phones = contacts[i].getElementsByTagName("phone");
+          
+          let phoneList = [];
+          for (let j = 0; j < phones.length; j++) {
+            phoneList.push(`${phones[j].getAttribute("type")}: ${phones[j].textContent}`);
+          }
+
+          html += `<tr>
+                    <td>${first} ${last}</td>
+                    <td>${email}</td>
+                    <td>${phoneList.join("<br>")}</td>
+                   </tr>`;
+        }
+
+        html += "</table>";
+        document.getElementById("contact-data").innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById("contact-data").innerHTML = "<p style='color:red;'>Error loading XML</p>";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

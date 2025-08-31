@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="feedback-page-body">
+
+    <div class="feedback-container">
+        <h2 class="feedback-title">We'd Love Your Feedback!</h2>
+        <p class="feedback-subtitle">Help us improve by sharing your thoughts.</p>
+        
+        <form onsubmit="event.preventDefault(); alert('Thank you for your feedback!');">
+            
+            <div class="form-group">
+                <label for="name" class="feedback-label">Name</label>
+                <input type="text" id="name" name="name" class="feedback-input" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="feedback-label">Email Address</label>
+                <input type="email" id="email" name="email" class="feedback-input" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+                <label class="feedback-label">How would you rate your experience?</label>
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5" required><label for="star5" title="5 stars">★</label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars">★</label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars">★</label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars">★</label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star">★</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comments" class="feedback-label">Comments</label>
+                <textarea id="comments" name="comments" rows="5" class="feedback-textarea" placeholder="Tell us more about your experience..." required></textarea>
+            </div>
+            <button type="submit" class="feedback-button">Submit Feedback</button>
+        </form>
+    </div>
+
+</body>
+</html>

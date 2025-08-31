@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registration>
+    <user>
+        <firstName>John</firstName>
+        <lastName>Doe</lastName>
+        <email>you@example.com</email>
+        <mobile>9876543210</mobile>
+        <password>password123</password>
+        <confirmPassword>password123</confirmPassword>
+        <dateOfBirth>1990-01-01</dateOfBirth>
+        <gender>male</gender>
+        <termsAccepted>true</termsAccepted>
+    </user>
+</registration>
